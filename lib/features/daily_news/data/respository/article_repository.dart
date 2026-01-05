@@ -43,12 +43,12 @@ class ArticleRepositoryImplementation implements ArticleRepository {
   }
 
   @override
-  Future<void> removeArticle(ArticleEntity article) {
+  Future<void> saveArticle(ArticleEntity article) {
     return _appDatabase.articleDao.insertArticle(ArticleModel.fromEntity(article));
   }
 
   @override
-  Future<void> saveArticle(ArticleEntity article) {
+  Future<void> removeArticle(ArticleEntity article) {
     return _appDatabase.articleDao.deleteArticle(ArticleModel.fromEntity(article));
   }
 }
